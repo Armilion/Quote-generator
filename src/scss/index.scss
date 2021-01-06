@@ -1,0 +1,100 @@
+@mixin box-shadow($x, $y, $blur, $sprea-radius, $color, $inset:null){
+  -webkit-box-shadow: $x $y $blur $sprea-radius $color $inset;
+  -moz-box-shadow: $x $y $blur $sprea-radius $color $inset;
+  -ms-box-shadow: $x $y $blur $sprea-radius $color $inset;
+  -o-box-shadow: $x $y $blur $sprea-radius $color $inset;
+  box-shadow: $x $y $blur $sprea-radius $color $inset;
+}
+
+body{
+  margin:0;
+}
+
+#bg-image{
+  background-size:cover;
+  background-repeat:repeat;
+  background-position:center;
+  width:100vw;
+  height:100vh;
+  filter:blur(7px);
+}
+
+#pattern-image{
+  background: repeating-linear-gradient( 180deg, #ff3700, #000 2px );
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;  
+  opacity:0.4;
+}
+
+#full-page{
+  font-family:"Calibri", "Helvetica", "sans-serif";
+  font-size:1.2em;
+  margin:auto;
+  position:absolute;
+  top:50vh;
+  left:50vh;
+  width:100vw;
+  margin:-25vh 0 0 -50vh;
+}
+
+#quote-box{
+  margin:auto;
+  width:60%;
+  background-color:white;
+  border-radius:5px;
+  @include box-shadow(10px, 10px, 0px, 0px, rgba(181,30,0,1));
+  padding:1em 2em 1em 2em;
+  
+  >div:last-child{
+    display:flex;
+    height:60px;
+  }
+}
+
+#text{
+  background-color:rgba(255,230,224,1);
+  color:rgba(181,30,0,1);
+  @include box-shadow(10px, 10px, 0px, 0px, rgba(181,30,0,1));
+  padding:1em 2em 1em 2em;
+  border-radius:5px;
+  line-height:2em;
+  margin:0.5em;
+}
+
+#author{
+  text-align:right;
+  color:rgba(181,30,0,1);
+}
+
+#new-quote, #tweet-quote{
+  background-color:rgba(181,30,0,1);
+  padding:1em 1em 1em 1em;
+  border:1px solid white;
+  border-radius:5px;
+  color:white;
+  margin-left:0.5em;
+}
+
+#new-quote:hover, #tweet-quote:hover{
+  cursor:pointer;
+  opacity:0.8;
+}
+
+@media(max-width:600px){
+  
+  #quote-box{
+    width:70%;
+  }
+  
+  #text{
+    line-height:normal;
+    font-size:0.8em;
+  }
+  
+  #author{
+    font-size:0.8em;
+  }
+}

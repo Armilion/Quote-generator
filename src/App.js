@@ -34,7 +34,7 @@ const App = () => {
     }
   }, [click]);
 
-  /*useEffect(() => {
+  useEffect(() => {
       $('#bg-image').css('background-image', BACKGROUND_IMAGES[currentBackgroundIndex]);
       function changeBackground(){
         setBackGroundIndex((currentBackgroundIndex + 1) % BACKGROUND_IMAGES.length);
@@ -45,7 +45,7 @@ const App = () => {
 
        setInterval(changeBackground, 5000);
 
-  }, [currentBackgroundIndex])*/
+  }, [currentBackgroundIndex])
 
   return(
     <div id="quote-box">
